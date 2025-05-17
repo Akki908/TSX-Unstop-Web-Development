@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interactive Web Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to My Stylish Page</h1>
+    <p>This is a paragraph with enhanced styles and animation effects.</p>
+    <button id="clickBtn">Click Me!</button>
+  </div>
+
+  <script>
+    console.log("Page has loaded!");
+
+  const button = document.getElementById("clickBtn");
+
+  // When the button is clicked, show a friendly alert
+  button.addEventListener("click", () => {
+    alert("Thanks for clicking! 😊");
+  });
+
+  // Bonus: Change background color on button click, cycling through colors
+  const colors = ["#0077cc", "#28a745", "#ff5722", "#6f42c1", "#e91e63"];
+  let currentColorIndex = 0;
+
+  button.addEventListener("click", () => {
+    currentColorIndex = (currentColorIndex + 1) % colors.length;
+    button.style.backgroundColor = colors[currentColorIndex];
+  });
+  </script>
+</body>
+</html>
